@@ -96,7 +96,8 @@
 (ert-deftest enhanced-dirvish-test-custom-device-icons-and-virtual-guards ()
   (let ((gd (make-enhanced-dirvish-device :name "Google Drive" :mountpoint "/home/u/Google Drive" :placement 'cloud))
         (pd (make-enhanced-dirvish-device :name "Proton Drive" :mountpoint "/home/u/Proton Drive" :placement 'cloud))
-        (sc (make-enhanced-dirvish-device :name "Crypt" :mountpoint "/home/u/Cloud Drive" :placement 'cloud))
+        (sc (make-enhanced-dirvish-device :name "Crypt" :mountpoint "/home/u/Crypt" :fstype "fuse.rclone"
+                                         :placement 'cloud))
         (rt (make-enhanced-dirvish-device :name "File System" :mountpoint "/" :placement 'fixed)))
     (should (string= (enhanced-dirvish-device-icon gd) "▲"))
     (should (string= (enhanced-dirvish-device-icon pd) "◆"))
